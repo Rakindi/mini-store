@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniStore</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    .logo .dot {
+      color: #ff3c00;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links li {
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff3c00;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 15px 25px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        text-align: right;
+        padding: 15px 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 6px 0 0 6px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+      }
+
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .icons {
+        font-size: 1.4em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">MiniStore<span class="dot">.</span></div>
+
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Watches</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Pages ▾</a></li>
+      </ul>
+    </nav>
+
+    <div class="icons">
+      <span>🔍</span>
+      <span>👤</span>
+      <span>🛒</span>
+    </div>
+  </header>
+
+  <script>
+    const menu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    menu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+  <style>
+      .hero{
+       text-align: center; 
+      }
+      
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        margin-top: 2rem;
+      } 
+     
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        YOUR<br>
+        PRODUCTS ARE<br>
+        GREAT.
+      </h1>
+      <button class="shop-btn">SHOP PRODUCT</button>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://themewagon.github.io/MiniStore/images/banner-image.png "  alt="Smartwatch">
+    </div>
+  </section>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+      .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .hero-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: 5rem;       
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      color: #1b1c1d;
+      margin-bottom: 2rem;
+    }
+
+    .shop-btn {
+      background-color: #1b1c1d;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      background-color: #333;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 100%;         
+      max-width: 550px;
+      border-radius: 25px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0; 
+      background-color: #fff;
+    }
+
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      text-align: left;
+      padding: 60px 20px;
+      gap: 50px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      width: 250px;
+      gap: 15px;
+    }
+
+    .feature-item i {
+      font-size: 28px;
+      color: #7ec0cc;
+      margin-top: 5px;
+    }
+
+    .feature-text h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 5px;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .feature-text p {
+      margin: 0;
+      font-size: 14px;
+      color: #777;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature-item {
+        width: 80%;
+      }
+    }
+  </style>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <section class="features">
+    <div class="feature-item">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="feature-text">
+        <h3>FREE DELIVERY</h3>
+        <p>Consectetur adipi elit lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <i class="fas fa-award"></i>
+      <div class="feature-text">
+        <h3>QUALITY GUARANTEE</h3>
+        <p>Dolor sit amet orem ipsu mcons ectetur adipi elit.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <i class="fas fa-tag"></i>
+      <div class="feature-text">
+        <h3>DAILY OFFERS</h3>
+        <p>Amet consectetur adipi elit loreme ipsum dolor sit.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <i class="fas fa-shield-alt"></i>
+      <div class="feature-text">
+        <h3>100% SECURE PAYMENT</h3>
+        <p>Rem Lopsum dolor sit amet, consectetur adipi elit.</p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f2f6f9;
+      color: #1b1c1d;
+      line-height: 1.4;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5% 8%;
+      min-height: 100vh;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 5rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      color: #1b1c1d;
+      margin-bottom: 2rem;
+    }
+
+    .shop-btn {
+      background-color: #1b1c1d;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      background-color: #333;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 350px;
+      max-width: 100%;
+      border-radius: 25px;
+      object-fit: contain;
+    }
+
+    .products-section {
+      background-color: #fff;
+      padding: 80px 8%;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #111;
+    }
+
+    .shop-link {
+      text-decoration: none;
+      color: #111;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #111;
+      transition: 0.3s;
+    }
+
+    .shop-link:hover {
+      color: #0088cc;
+      border-color: #0088cc;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      position: relative;
+      background: #f9f9f9;
+      text-align: center;
+      padding-bottom: 20px;
+      overflow: hidden;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .add-cart {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .product-card:hover .add-cart {
+      opacity: 1;
+    }
+
+    .product-info {
+      margin-top: 10px;
+    }
+
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .price {
+      color: #6eb1d6;
+      font-weight: 600;
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        margin-top: 2rem;
+      }
+
+      .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <section class="products-section">
+    <div class="section-header">
+      <h2>MOBILE PRODUCTS</h2>
+      <a href="#" class="shop-link">GO TO SHOP</a>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item1.jpg" alt="iPhone 10">
+        <div class="product-info">
+          <h3>IPHONE 10</h3>
+          <p class="price">$980</p>
+        </div>
+        <button class="add-cart">ADD TO CART 🛒</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item2.jpg" alt="iPhone 11">
+        <div class="product-info">
+          <h3>IPHONE 11</h3>
+          <p class="price">$1100</p>
+        </div>
+        <button class="add-cart">ADD TO CART 🛒</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item3.jpg" alt="iPhone 8">
+        <div class="product-info">
+          <h3>IPHONE 8</h3>
+          <p class="price">$780</p>
+        </div>
+        <button class="add-cart">ADD TO CART 🛒</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item4.jpg" alt="iPhone 13">
+        <div class="product-info">
+          <h3>IPHONE 13</h3>
+          <p class="price">$1500</p>
+        </div>
+        <button class="add-cart">ADD TO CART 🛒</button>
+      </div>
+    </div>
+  </section>
+
+
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    section.products-section {
+      background-color: #fff;
+      padding: 80px 8%;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #111;
+    }
+
+    .shop-link {
+      text-decoration: none;
+      color: #111;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #111;
+      transition: 0.3s;
+    }
+
+    .shop-link:hover {
+      color: #0088cc;
+      border-color: #0088cc;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      position: relative;
+      background: #f9f9f9;
+      text-align: center;
+      padding-bottom: 20px;
+      overflow: hidden;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product-card:hover { transform: translateY(-5px); }
+
+    .add-cart {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      opacity: 0;
+      transition: 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .product-card:hover .add-cart { opacity: 1; }
+
+    .product-info { margin-top: 10px; }
+
+    .product-info h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .price {
+      color: #6eb1d6;
+      font-weight: 600;
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text h1 { font-size: 3rem; }
+      .hero-image { margin-top: 2rem; }
+      .section-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="products-section">
+    <div class="section-header">
+      <h2>SMART WATCHES</h2>
+      <a href="#" class="shop-link">GO TO SHOP</a>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item6.jpg" alt="Pink Watch">
+        <div class="product-info">
+          <h3>PINK WATCH</h3>
+          <p class="price">$870</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item7.jpg" alt="Heavy Watch">
+        <div class="product-info">
+          <h3>HEAVY WATCH</h3>
+          <p class="price">$680</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item8.jpg" alt="Spotted Watch">
+        <div class="product-info">
+          <h3>SPOTTED WATCH</h3>
+          <p class="price">$750</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="https://themewagon.github.io/MiniStore/images/product-item9.jpg" alt="Black Watch">
+        <div class="product-info">
+          <h3>BLACK WATCH</h3>
+          <p class="price">$650</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+
+  .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+  }
+
+    .hero-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .hero-text h1 {
+      font-size: 5rem;      
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      color: #1b1c1d;
+      margin-bottom: 2rem;
+    }
+
+    .shop-btn {
+      background-color: #1b1c1d;
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      background-color: #333;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image img {
+      width: 350px;        
+      max-width: 100%;
+      border-radius: 25px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h3>10% off</h3>
+      <h1>
+        NEW YEAR SALE<br>
+      </h1>
+      <button class="shop-btn">SHOP SALE</button>
+    </div>
+
+    <div class="hero-image">
+       <img src="https://themewagon.github.io/MiniStore/images/single-image1.png" alt="Smartwatch">
+    </div>
+  </section>
+
+  
+  <style>
+    .body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2.section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .read-blog {
+      float: right;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: #000;
+      border-bottom: 1px solid transparent;
+    }
+
+    .read-blog:hover {
+      border-bottom: 1px solid #000;
+    }
+
+    .posts {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .post {
+      flex: 1 1 calc(33.333% - 20px);
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+    }
+
+    .post img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .post-content {
+      padding: 15px 20px 25px;
+    }
+
+    .post-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .post-title {
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: #000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .post-title:hover {
+      color: #0073e6;
+    }
+
+    @media (max-width: 768px) {
+      .post {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="section-title">
+    </h2>
+
+    <div class="posts">
+      <div class="post">
+        <img src="https://themewagon.github.io/MiniStore/images/post-item1.jpg" alt="Cool Gadgets">
+        <div class="post-content">
+          <div class="post-meta">FEB 22, 2023 - GADGETS</div>
+          <a href="#" class="post-title">GET SOME COOL GADGETS IN 2023</a>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="https://themewagon.github.io/MiniStore/images/post-item2.jpg" alt="Technology Hack">
+        <div class="post-content">
+          <div class="post-meta">FEB 25, 2023 - TECHNOLOGY</div>
+          <a href="#" class="post-title">TECHNOLOGY HACK YOU WON'T GET</a>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="https://themewagon.github.io/MiniStore/images/post-item3.jpg" alt="Camera">
+        <div class="post-content">
+          <div class="post-meta">FEB 22, 2023 - CAMERA</div>
+          <a href="#" class="post-title">TOP 10 SMALL CAMERA IN THE WORLD</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    .testimonial-section {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .testimonial-text {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+
+    .stars {
+      color: #6fb0c8;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-author {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .subscribe-section {
+      background: #222529;
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 60px auto;
+      border-radius: 2px;
+    }
+
+    .subscribe-text {
+      flex: 1 1 50%;
+    }
+
+    .subscribe-text h2 {
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .subscribe-text p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin: 0;
+    }
+
+    .subscribe-form {
+      flex: 1 1 45%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 0.95rem;
+      border: none;
+      outline: none;
+      color: #222;
+    }
+
+    .subscribe-form button {
+      background: #6fb0c8;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-form button:hover {
+      background: #5a9ab2;
+    }
+
+    @media (max-width: 768px) {
+      .subscribe-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .subscribe-form {
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+      }
+
+      .subscribe-form input[type="email"] {
+        width: 70%;
+      }
+
+      .subscribe-form button {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="testimonial-section">
+    <p class="testimonial-text">
+      “Tempus oncu enim pellen tesque este pretium in neque, elit morbi sagittis lorem habi mattis Pellen tesque pretium feugiat vel morbi suspen dise sagittis lorem habi tasse morbi.”
+    </p>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <div class="testimonial-author">EMMA CHAMBERLIN</div>
+  </section>
+
+  <section class="subscribe-section">
+    <div class="subscribe-text">
+      <h2>SUBSCRIBE US NOW</h2>
+      <p>Get latest news, updates and deals directly mailed to your inbox.</p>
+    </div>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Your email address here" required />
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+  </section>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #fff;
+    }
+
+     
+/* #shop for instagallery */
+    .body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .h2 {
+      margin-top: 40px;
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: #222;
+    }
+
+    .insta-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .insta-gallery img {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .insta-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .insta-gallery img {
+        width: 45%;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .insta-gallery img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+
+   <h2> <center>SHOP OUR INSTA</center> </h2>
+
+  <div class="insta-gallery">
+    <img src="https://themewagon.github.io/MiniStore/images/insta-item1.jpg" alt="Product 1">
+    <img src="https://themewagon.github.io/MiniStore/images/insta-item2.jpg" alt="Product 2">
+    <img src="https://themewagon.github.io/MiniStore/images/insta-item3.jpg" alt="Product 3">
+    <img src="https://themewagon.github.io/MiniStore/images/insta-item4.jpg" alt="Product 4">
+    <img src="https://themewagon.github.io/MiniStore/images/insta-item5.jpg" alt="Product 5">
+  </div>
+
+
+
+
+
+  <style>
+    /* Footer Container */
+    .footer {
+      background: #fff;
+      border-top: 1px solid #eee;
+      padding: 60px 40px 20px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-column {
+      flex: 1 1 220px;
+      min-width: 200px;
+    }
+
+    .footer-column h4 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      color: #333;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #6fb0c8;
+    }
+
+    .footer-about p {
+      font-size: 0.95rem;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: #ccc;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #6fb0c8;
+    }
+
+    /* Bottom Bar */
+    .footer-bottom {
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+      padding-top: 15px;
+      font-size: 0.9rem;
+      color: #777;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-bottom img {
+      height: 25px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .footer-bottom a {
+      color: #6fb0c8;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+
+  <!-- (Optional) Include Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <footer>
+    <div class="footer-container">
+      <!-- Column 1: About -->
+      <div class="footer-column footer-about">
+        <h2>MiniStore<span style="color:#6fb0c8;">.</span></h2>
+        <p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat aenean odio erat nullam fringilla.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Help & Info -->
+      <div class="footer-column">
+        <h4>Help & Info Help</h4>
+        <ul>
+          <li><a href="#">Track Your Order</a></li>
+          <li><a href="#">Returns Policies</a></li>
+          <li><a href="#">Shipping + Delivery</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Do you have any queries or suggestions?<br>
+        <a href="mailto:yourinfo@gmail.com">yourinfo@gmail.com</a></p>
+        <p>If you need support? Just give us a call.<br>
+        <a href="tel:+5511122233344">+55 111 222 333 44</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>We ship with: 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/DHL_Logo.svg/120px-DHL_Logo.svg.png" alt="DHL">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/PostNL_logo.svg/120px-PostNL_logo.svg.png" alt="PostNL">
+      </div>
+      <div>Payment options: 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+      </div>
+      <div>© Copyright 2023 MiniStore. Design by <a href="#">TemplatesJungle</a> Distribution by <a href="#">ThemeWagon</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
